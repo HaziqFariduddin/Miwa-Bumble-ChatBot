@@ -69,7 +69,7 @@ const Chat = () => {
                         text: chatGptResponse,
                         voice_settings: {
                             stability: 0.51,
-                            similarity_boost: 0.75,
+                            similarity_boost: 0.77,
                         },
                     },
                     {
