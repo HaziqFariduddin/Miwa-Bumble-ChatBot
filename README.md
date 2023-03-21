@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# Description
+This repository contains the source code for the Miwa Bumble ChatBot, a React-based AI chatbot that emulates the personality of its creator, Farid. Designed for engaging and supportive conversations, Miwa is capable of handling a wide range of tasks and answering various questions. The chatbot utilizes OpenAI's GPT-3.5 Turbo model for text generation and task assistance, and the Eleven Labs API for text-to-speech functionality.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Features
+Engaging and supportive conversation style
+Mimics the voice of the creator, Farid
+Powered by OpenAI's GPT-3.5 Turbo model
+Text-to-speech functionality using the Eleven Labs API
+User-friendly interface built with React and Material-UI
+Backend server using Express and Node.js
+Deployed on Heroku
 
-## Available Scripts
 
-In the project directory, you can run:
+# How to Use
 
-### `npm start`
+Clone this repository to your local machine:
+<pre>
+git clone https://github.com/yourusername/Miwa-Bumble-ChatBot.git
+</pre>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Change your working directory to the cloned repository:
+<pre>
+cd Miwa-Bumble-ChatBot
+</pre>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Install dependencies for the project:
+<pre>
+npm install
+</pre>
 
-### `npm test`
+Create a .env file in the root directory of the project and add the following environment variables:
+<pre>
+REACT_APP_VOICE_API_KEY=your_voice_api_key
+</pre>
+Replace your_voice_api_key with your Eleven Labs API key and OpenAI API key, respectively.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Start the development server:
+<pre>
+npm start
+</pre>
 
-### `npm run build`
+This will open the chatbot in your default web browser at http://localhost:3000.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To build the project for production, run:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<pre>
+npm run build
+</pre>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Functionality
+The chatbot handles user input and processes it using OpenAI's GPT-3.5 Turbo model. It can:
 
-### `npm run eject`
+- Answer questions
+- Generate text
+- Assist with tasks
+- Provide loving and supportive responses, as per its design
+- Redirect users to Farid's WhatsApp for more information
+- Additionally, Miwa Bumble ChatBot uses the Eleven Labs API to convert generated text into speech, mimicking Farid's voice.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Contributing
+Feel free to contribute to this project by submitting issues, pull requests, or reaching out to the creator.
