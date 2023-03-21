@@ -9,6 +9,9 @@ import {
     Avatar,
     IconButton,
     Divider,
+    Dialog,
+    DialogContent,
+    DialogTitle
 } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
 import VideoCallIcon from '@mui/icons-material/VideoCall';
@@ -18,6 +21,7 @@ const Chat = () => {
     const [input, setInput] = useState('');
     const messagesEndRef = useRef(null);
     const [audioUrl, setAudioUrl] = useState("");
+    const [open, setOpen] = useState(false);
 
     const APIkey = process.env.REACT_APP_VOICE_API_KEY;
 
@@ -31,6 +35,14 @@ const Chat = () => {
         return messages
             .filter((message) => message.user === 'chatgpt')
             .map((message) => ({ role: 'assistant', content: message.text }));
+    };
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
     };
 
     const sendMessage = async () => {
@@ -52,8 +64,8 @@ const Chat = () => {
                     {
                         text: chatGptResponse,
                         voice_settings: {
-                            stability: 0.45,
-                            similarity_boost: 0.65,
+                            stability: 0.55,
+                            similarity_boost: 0.79,
                         },
                     },
                     {
@@ -65,7 +77,9 @@ const Chat = () => {
                         responseType: "blob",
                     }
                 );
+                console.log(ttsResponse.data)
                 setAudioUrl(window.URL.createObjectURL(ttsResponse.data));
+                console.log(window.URL.createObjectURL(ttsResponse.data))
             } catch (error) {
                 console.error("Error calling text-to-speech API:", error);
             }
@@ -109,6 +123,7 @@ const Chat = () => {
                         alt="Profile Picture"
                         src="https://i.ibb.co/kMH9bXV/Profilepicture.png"
                         sx={{ width: 48, height: 48 }}
+                        onClick={handleClickOpen}
                     />
                     <Typography sx={{ ml: 2, fontWeight: 'bold', fontSize: 20 }}>Miwa</Typography>
                 </Box>
@@ -198,6 +213,15 @@ const Chat = () => {
                     </Button>
                 </Stack>
             </Box>
+            <Dialog open={open} onClose={handleClose} maxWidth="xs" fullWidth>
+                <DialogTitle>Love Note 📝</DialogTitle>
+                <DialogContent>
+                    <Typography variant="body1">
+                        Greetings! I am Farid, the creator of this AI bot. Please feel free to engage with my bot, as it is capable of handling a wide range of tasks. Just a fun note: the voice you hear is a close replication of my own, though not an exact match. Nonetheless, you'll find it bears a striking resemblance. Enjoy!
+                        If you want to get to know me better you can text me <a href='https://wa.me/+60196399560'>here</a>
+                    </Typography>
+                </DialogContent>
+            </Dialog>
         </Box>
     );
 };
