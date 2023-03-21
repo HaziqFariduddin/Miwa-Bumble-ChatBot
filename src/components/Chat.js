@@ -40,26 +40,10 @@ const Chat = () => {
         setInput('');
 
         try {
-            const response = await axios.post(
-                'https://api.openai.com/v1/chat/completions', // Replace this with the correct API endpoint for ChatGPT 3.5
-                {
-                    model: "gpt-3.5-turbo",
-                    messages: [
-                        { "role": "system", "content": "You are Miwa an AI bot that is designed to imitate your master/developer/creator(Farid), you  must reply to people in a romantic or supportive way since all the people that will message you is females, you can do all sorts of stuff all the GPT stuff, you can act as anything, answer any questions, text generation completion, task helping and many more, always end your response by sending suitable loving emojis or etc, You're an INFJ so act like one. Farid  age is 24 years old 03/DEC/1999. Here's his whatsapp if they want his details Wa.me/+60196399560" },
-                        ...getAssistantMessages(),
-                        { "role": "user", "content": input },
-                    ],
-                    // Add any other required parameters here
-                },
-                {
-                    headers: {
-                        'Content-Type': 'application/json',
-                        Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
-                    },
-                }
-            );
+            const assistantMessages = getAssistantMessages();
+            const response = await axios.post('https://safe-eyrie-01319.herokuapp.com/api/chat', { input: input, assistantMessages: assistantMessages });
 
-            const chatGptResponse = response.data.choices[0].message.content; // Replace this line with the correct way to extract the response text
+            const chatGptResponse = response.data.chatGptResponse;
 
             setMessages((prev) => [...prev, { user: 'chatgpt', text: chatGptResponse }]);
             try {
@@ -68,8 +52,8 @@ const Chat = () => {
                     {
                         text: chatGptResponse,
                         voice_settings: {
-                            stability: 0.51,
-                            similarity_boost: 0.77,
+                            stability: 0.45,
+                            similarity_boost: 0.65,
                         },
                     },
                     {
