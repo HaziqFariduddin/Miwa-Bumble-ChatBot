@@ -1,6 +1,8 @@
 # Description
 This repository contains the source code for the Miwa Bumble ChatBot, a React-based AI chatbot that emulates the personality of its creator, Farid. Designed for engaging and supportive conversations, Miwa is capable of handling a wide range of tasks and answering various questions. The chatbot utilizes OpenAI's GPT-3.5 Turbo model for text generation and task assistance, and the Eleven Labs API for text-to-speech functionality.
 
+# Live Preview
+[Click here to view the app](https://haziqfariduddin.github.io/Miwa-Bumble-ChatBot/)
 # Features
 Engaging and supportive conversation style
 Mimics the voice of the creator, Farid
